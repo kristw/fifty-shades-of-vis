@@ -1,0 +1,18 @@
+[
+  {
+    "spec": "charts/groupedBar.json",
+    "scaleName": "color"
+  },
+  {
+    "spec": "charts/stackedArea.json",
+    "scaleName": "color"
+  },
+  {
+    "spec": "charts/choropleth.json",
+    "scaleName": "color"
+  },
+  {
+    "spec": "charts/heatmap.json",
+    "scaleName": "c"
+  }
+]

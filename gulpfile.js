@@ -31,7 +31,7 @@ var paths = {
 
 var patterns = {
   js          : paths.src + '/app/**/*.js',
-  bower       : paths.src + '/bower_components/**/*.@(css|png|jpg|jpeg|tiff|gif|woff|woff2|ttf|otf|svg)',
+  bower       : paths.src + '/bower_components/**/*.@(js|css|png|jpg|jpeg|tiff|gif|woff|woff2|ttf|otf|svg)',
   sass        : paths.src + '/app/**/*.scss',
   ngtemplates : paths.src + '/app/**/*.html',
   appJson     : paths.src + '/app/**/*.json',
@@ -130,7 +130,7 @@ gulp.task('ngtemplates', function () {
     .pipe($.ngTemplates({
       filename: 'bundle.ngtemplates.js',
       module: 'app.templates',
-      standalone: false
+      standalone: true
     }))
     .pipe(gulp.dest(paths.dist + '/app'));
 });
