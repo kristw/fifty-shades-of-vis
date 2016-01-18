@@ -1,0 +1,20 @@
+{
+  "name": "fifty-shades-of-vis",
+  "description": "Preview visualizations with different color palettes.",
+  "authors": [
+    "Krist Wongsuphasawat <krist.wongz@gmail.com> (http://kristw.yellowpigz.com)"
+  ],
+  "keywords": [],
+  "homepage": "https://kristw.github.io/fifty-shades-of-vis",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "~1.4.8"
+  }
+}
