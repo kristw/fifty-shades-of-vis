@@ -1,5 +1,10 @@
-module.exports = function($scope, $http){
-  $scope.stops = [3,4,5,6,7,8,9,10,11,12];
+'use strict';
+
+// var d3 = require('d3');
+var charts = require('../data/charts.json');
+
+module.exports = function($scope){
+  $scope.stops = d3.range(3, 12, 1);
   $scope.numColors = 3;
   $scope.colorbrewer = colorbrewer;
   $scope.d3Colors = {
@@ -16,11 +21,7 @@ module.exports = function($scope, $http){
 
   $scope.colors = [];
   $scope.bgColor = {color: '#fff'};
-  $scope.charts = [];
-
-  $http.get('charts.json').then(function(response){
-    $scope.charts = response.data;
-  });
+  $scope.charts = charts;
 
   $scope.addColor = function(){
     $scope.colors.push({

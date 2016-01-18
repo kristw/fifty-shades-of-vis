@@ -4,12 +4,12 @@
   "data": [
     {
       "name": "unemp",
-      "url": "data/unemployment.tsv",
+      "url": "data/datasets/unemployment.tsv",
       "format": {"type": "tsv", "parse": "auto"}
     },
     {
       "name": "counties",
-      "url": "data/us-10m.json",
+      "url": "data/datasets/us-10m.json",
       "format": {"type": "topojson", "feature": "counties"},
       "transform": [
         { "type": "geopath", "projection": "albersUsa" },

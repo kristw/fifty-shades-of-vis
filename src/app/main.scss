@@ -15,6 +15,12 @@ h1,h2,h3{
   font-weight: 300;
 }
 
+h1.title{
+  font-weight: normal;
+  font-size: 18px;
+  text-transform: uppercase;
+}
+
 h3{
   cursor: pointer;
   padding: 2px 4px 3px 4px;
@@ -114,7 +120,7 @@ table th{
 
 .color-picker-container.color-picker-add button{
   font-size: 1.5em;
-  padding: 5px 22px 11px 22px;
+  padding: 3px 22px 9px 22px;
   background: none;
   font-weight: 300;
   border: 1px dashed rgba(255,255,255,0.7);
