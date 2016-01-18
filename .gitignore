@@ -32,5 +32,6 @@ docker-compose.yml
 # Project specific
 dist
 tmp
+.publish
 .sass-cache
 *.sublime-workspace
