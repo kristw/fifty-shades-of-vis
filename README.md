@@ -38,7 +38,9 @@ Test coverage will be generated to ```coverage``` directory.
 
 ## License
 
-© 2016 [Krist Wongsuphasawat](http://kristw.yellowpigz.com) / @[kristw](https://twitter.com/kristw) Apache-2.0 License
+© 2016 [Krist Wongsuphasawat](http://kristw.yellowpigz.com) ([@kristw](https://twitter.com/kristw)) Apache-2.0 License
 
+[travis-image]: https://travis-ci.org/kristw/fifty-shades-of-vis.svg?branch=master
+[travis-url]: https://travis-ci.org/kristw/fifty-shades-of-vis
 [daviddm-image]: https://david-dm.org/kristw/fifty-shades-of-vis.svg?theme=shields.io
 [daviddm-url]: https://david-dm.org/kristw/fifty-shades-of-vis
