@@ -1,27 +1,25 @@
 'use strict';
 
-// var d3 = require('d3');
 var charts = require('../data/charts.json');
+var palettes = require('./palettes.js');
 
 module.exports = function($scope){
   $scope.stops = d3.range(3, 12, 1);
+
   $scope.numColors = 3;
-  $scope.colorbrewer = colorbrewer;
-  $scope.d3Colors = {
-    category10: d3.scale.category10().range(),
-    category20: d3.scale.category20().range(),
-    category20b: d3.scale.category20b().range(),
-    category20c: d3.scale.category20c().range()
-  };
-
-  $scope.showPresets = {
-    colorbrewer: false,
-    d3: false
-  };
-
-  $scope.colors = [];
   $scope.bgColor = {color: '#fff'};
+  $scope.colors = [];
+
   $scope.charts = charts;
+  $scope.filteredPalettes = [];
+
+  function filterPalettes(){
+    $scope.filteredPalettes = palettes.filter(function(palette){
+      return !palette.numColors || palette.numColors===$scope.numColors;
+    });
+  }
+
+  $scope.$watch('numColors', filterPalettes);
 
   $scope.addColor = function(){
     $scope.colors.push({
@@ -34,8 +32,8 @@ module.exports = function($scope){
   };
 
   $scope.selectPalette = function(palette){
-    $scope.colors = palette.map(function(d){return {color: d};});
+    $scope.colors = palette.colors.map(function(d){return {color: d};});
   };
 
-  $scope.selectPalette($scope.d3Colors.category10);
+  $scope.selectPalette(palettes[0]);
 };

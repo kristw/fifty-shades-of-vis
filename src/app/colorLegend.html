@@ -1,13 +1,5 @@
 <div class="color-legend">
-  <small>
-    <span class="" ng-bind="leftText"></span>
-  </small>
-  <div class="inline-block" ng-repeat="color in legendColors track by $index">
-    <svg width="8" height="14">
-      <rect width="8" height="14" fill="{{color}}"></rect>
-    </svg>
-  </div>
-  <small>
-    <span class="" ng-bind="rightText"></span>
-  </small>
+  <svg width="8" height="14" class="inline-block" ng-repeat="color in legendColors track by $index">
+    <rect width="8" height="14" fill="{{color}}"></rect>
+  </svg>
 </div>

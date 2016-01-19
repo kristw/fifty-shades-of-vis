@@ -35,28 +35,12 @@
       number of colors: <select ng-options="x for x in stops" ng-model="numColors"></select>
     </header>
     <div class="generator-column">
-      <h3 ng-click="togglePreset('colorbrewer')">+ ColorBrewer</h3>
-      <table ng-show="showPresets.colorbrewer">
-        <tr ng-repeat="(name, sets) in colorbrewer">
-          <th>
-            {{name}}
-          </th>
-          <td>
-            <color-legend legend-colors="sets[numColors]" ng-click="selectPalette(sets[numColors])"></color-legend>
-          </td>
-        </tr>
-      </table>
-      <h3 ng-click="togglePreset('d3')">+ D3</h3>
-      <table ng-show="showPresets.d3">
-        <tr ng-repeat="(name, palette) in d3Colors">
-          <th>
-            <!-- {{name}} -->
-          </th>
-          <td>
-            <color-legend legend-colors="palette" ng-click="selectPalette(palette)"></color-legend>
-          </td>
-        </tr>
-      </table>
+      <div class="palette-preview" ng-repeat="palette in filteredPalettes" ng-click="selectPalette(palette)">
+        <div class="palette-preview-title">
+          {{palette.group}}'s {{palette.name}}
+        </div>
+        <color-legend legend-colors="palette.colors"></color-legend>
+      </div>
     </div>
     <div class="palette-column">
       <div class="palette-row">
@@ -69,7 +53,7 @@
       </div>
       <div class="palette-row">
         <div class="text-block">
-          palette
+          foreground
         </div>
         <div class="color-picker-container" ng-repeat="color in colors">
           <color-picker color="color"></color-picker>
@@ -94,7 +78,6 @@
   <script src="bower_components/angular/angular.min.js"></script>
   <script src="bower_components/vega/vega.min.js"></script>
   <script src="bower_components/ng-vega/dist/ng-vega.min.js"></script>
-  <script src="bower_components/colorbrewer/colorbrewer.js"></script>
 
   <script src="app/bundle.ngtemplates.js"></script>
   <script src="app/bundle.js"></script>

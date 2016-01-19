@@ -22,7 +22,7 @@ module.exports = {
     ],
   },
   resolve: {
-    modulesDirectories: ['src/bower_components']
+    modulesDirectories: ['./src/bower_components']
   },
   plugins: [
     new webpack.ResolverPlugin(
