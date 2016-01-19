@@ -1,5 +1,14 @@
+'use strict';
+
 angular.module('app', ['ngVega', 'app.templates'])
   .controller('mainCtrl', require('./main-controller.js'))
   .directive('colorPicker', require('./colorPicker.js'))
   .directive('colorLegend', require('./colorLegend.js'))
   .directive('visPreview', require('./visPreview.js'));
+
+(function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
+function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
+e=o.createElement(i);r=o.getElementsByTagName(i)[0];
+e.src='//www.google-analytics.com/analytics.js';
+r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
+ga('create','UA-59971789-1');ga('send','pageview');
