@@ -24,41 +24,39 @@
   <meta property="og:description" content="Preview visualizations with different color palettes." />
   <meta property="og:image" content="https://kristw.github.io/fifty-shades-of-vis/images/thumbnail.png"/>
 
+  <link href='https://fonts.googleapis.com/css?family=Satisfy' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" href="app/main.css">
 </head>
 
 <body ng-app="app">
-  <div ng-controller="mainCtrl">
+  <div class="wrapper" ng-controller="mainCtrl">
+    <header>
+      <h1 class="title">Fifty Shades of Vis</h1>
+      number of colors: <select ng-options="x for x in stops" ng-model="numColors"></select>
+    </header>
     <div class="generator-column">
-      <div class="content">
-        <h1 class="title">Fifty Shades of Vis</h1>
-        <div>
-          Presets
-        </div>
-        <select style="float:right" ng-options="x for x in stops" ng-model="numColors"></select>
-        <h3 ng-click="togglePreset('colorbrewer')">+ ColorBrewer</h3>
-        <table ng-show="showPresets.colorbrewer">
-          <tr ng-repeat="(name, sets) in colorbrewer">
-            <th>
-              {{name}}
-            </th>
-            <td>
-              <color-legend legend-colors="sets[numColors]" ng-click="selectPalette(sets[numColors])"></color-legend>
-            </td>
-          </tr>
-        </table>
-        <h3 ng-click="togglePreset('d3')">+ D3</h3>
-        <table ng-show="showPresets.d3">
-          <tr ng-repeat="(name, palette) in d3Colors">
-            <th>
-              {{name}}
-            </th>
-            <td>
-              <color-legend legend-colors="palette" ng-click="selectPalette(palette)"></color-legend>
-            </td>
-          </tr>
-        </table>
-      </div>
+      <h3 ng-click="togglePreset('colorbrewer')">+ ColorBrewer</h3>
+      <table ng-show="showPresets.colorbrewer">
+        <tr ng-repeat="(name, sets) in colorbrewer">
+          <th>
+            {{name}}
+          </th>
+          <td>
+            <color-legend legend-colors="sets[numColors]" ng-click="selectPalette(sets[numColors])"></color-legend>
+          </td>
+        </tr>
+      </table>
+      <h3 ng-click="togglePreset('d3')">+ D3</h3>
+      <table ng-show="showPresets.d3">
+        <tr ng-repeat="(name, palette) in d3Colors">
+          <th>
+            <!-- {{name}} -->
+          </th>
+          <td>
+            <color-legend legend-colors="palette" ng-click="selectPalette(palette)"></color-legend>
+          </td>
+        </tr>
+      </table>
     </div>
     <div class="palette-column">
       <div class="palette-row">
@@ -84,7 +82,7 @@
     </div>
     <div class="preview-column">
       <div style="clear:both">
-        <h2>Previews</h2>
+        <!-- <h2>Previews</h2> -->
       </div>
 
       <vis-preview ng-repeat="chart in charts" ng-style="{'background-color': bgColor.color}" config="chart" colors="colors"></vis-preview>
