@@ -45,4 +45,8 @@ module.exports = function($scope){
     $scope.colors = $scope.colorText.split(',').map(function(d){return {color: d};});
   };
 
+  $scope.removeColor = function(index){
+    $scope.colors.splice(index, 1);
+  };
+
 };

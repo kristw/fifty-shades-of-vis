@@ -53,7 +53,7 @@
           <div class="text-block">
             background
           </div>
-          <color-picker color="bgColor"></color-picker>
+          <color-picker class="no-remove" color="bgColor"></color-picker>
         </div>
       </div>
       <div class="palette-row">
@@ -61,7 +61,7 @@
           foreground
         </div>
         <div class="color-picker-container" ng-repeat="color in colors">
-          <color-picker color="color"></color-picker>
+          <color-picker color="color" on-remove="removeColor($index)"></color-picker>
         </div>
         <div class="color-picker-container color-picker-add">
           <button ng-click="addColor()">+</button>

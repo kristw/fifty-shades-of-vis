@@ -148,21 +148,38 @@ table th{
   font-weight: 300;
 }
 
-.color-picker input[type=text]{
-  font-size: 1em;
-  width: 100%;
-  text-align: center;
-  border: none;
-  background: none;
-  /*background: rgba(255,255,255, 0.4);*/
-  padding: 3px 0px;
-  text-transform: uppercase;
-  color: rgba(0,0,0,0.5);
+.color-picker.no-remove{
+  .remove-button{
+    display: none;
+  }
 }
 
 .color-picker{
+  position: relative;
   display: inline-block;
-  padding: 5px 0px;
+  padding: 3px 0px;
+
+  input[type=text]{
+    width: 100%;
+    font-size: 1.1em;
+    font-weight: bold;
+    text-align: center;
+    border: none;
+    background: none;
+    /*background: rgba(255,255,255, 0.4);*/
+    padding: 3px 0px;
+    text-transform: uppercase;
+    color: rgba(0,0,0,0.5);
+  }
+
+  .remove-button{
+    position: absolute;
+    right: 0;
+    top: 0;
+    padding: 0px 2px;
+    text-decoration: none;
+    background-color: rgba(255,255,255,0.5);
+  }
 }
 
 .color-picker-container{
