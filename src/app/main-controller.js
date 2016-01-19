@@ -36,4 +36,13 @@ module.exports = function($scope){
   };
 
   $scope.selectPalette(palettes[0]);
+
+  $scope.$watch('colors', function(colors){
+    $scope.colorText = colors.map(function(d){return d.color;}).join(',');
+  }, true);
+
+  $scope.parseColors = function(){
+    $scope.colors = $scope.colorText.split(',').map(function(d){return {color: d};});
+  };
+
 };

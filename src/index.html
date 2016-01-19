@@ -42,6 +42,11 @@
         <color-legend legend-colors="palette.colors"></color-legend>
       </div>
     </div>
+    <div class="custom-text-column">
+      Colors (comma-seperated)
+      <textarea rows="5" ng-model="colorText"></textarea>
+      <button class="" ng-click="parseColors()">Parse</button>
+    </div>
     <div class="palette-column">
       <div class="palette-row">
         <div class="color-picker-container">
