@@ -33,6 +33,8 @@
     <header>
       <h1 class="title">Fifty Shades of Vis</h1>
       number of colors: <select ng-options="x for x in stops" ng-model="numColors"></select>
+      <br>
+      scale type: <select ng-options="t for t in types" ng-model="scaleType"></select>
     </header>
     <div class="generator-column">
       <div class="palette-preview" ng-repeat="palette in filteredPalettes" ng-click="selectPalette(palette)">

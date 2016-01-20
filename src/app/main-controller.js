@@ -5,8 +5,10 @@ var palettes = require('./palettes.js');
 
 module.exports = function($scope){
   $scope.stops = d3.range(3, 12, 1);
+  $scope.types = ['sequential', 'diverging', 'categorical'];
 
   $scope.numColors = 3;
+  $scope.scaleType = 'sequential';
   $scope.bgColor = {color: '#fff'};
   $scope.colors = [];
 
@@ -15,11 +17,12 @@ module.exports = function($scope){
 
   function filterPalettes(){
     $scope.filteredPalettes = palettes.filter(function(palette){
-      return !palette.numColors || palette.numColors===$scope.numColors;
+      return palette.type===$scope.scaleType && (!palette.numColors || palette.numColors===$scope.numColors);
     });
   }
 
   $scope.$watch('numColors', filterPalettes);
+  $scope.$watch('scaleType', filterPalettes);
 
   $scope.addColor = function(){
     $scope.colors.push({
